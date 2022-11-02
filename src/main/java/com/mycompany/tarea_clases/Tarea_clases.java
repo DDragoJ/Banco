@@ -3,9 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
 
-package com.mycompany.tarea_clases;
-import com.mycompany.tarea_clases.Datos_Clases.cliente;
-
 /**
  *
  * @author cosmo
@@ -19,8 +16,6 @@ import com.mycompany.tarea_clases.Datos_Clases.cliente;
 public class Tarea_clases {
 
     public static void main(String[] args) {
-       cliente Persona=new cliente("","",0);
-       Persona.Leer();
-       Persona.Mostrar();
+       Interfaz Prueba = new Interfaz();
     }
 }
