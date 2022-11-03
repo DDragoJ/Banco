@@ -45,7 +45,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         lbl_Nombre.setText("Ingresar Nombre");
 
-        jTextField1.setText("Juan Valle");
+        jTextField1.setToolTipText("");
 
         btn_ingreso.setText("Registrar");
 

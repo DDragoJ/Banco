@@ -4,8 +4,6 @@
  */
 package com.mycompany.tarea_clases.Datos_Clases;
 
-import java.util.Date;
-
 
 
 /**
@@ -20,7 +18,4 @@ class ahorro extends cuenta {
         setSaldo(0.0);
         setInteres(0);
     }
-    
-    
-    
 }
