@@ -18,6 +18,7 @@ public class cliente {
     private String Nombre,NUI;
     private Integer Edad;
     private List<cuenta> oCuentas= new ArrayList<cuenta>();
+    private Tarjeta t_pago;
     
     /*cONSTRUCTOR*/
 
@@ -79,7 +80,7 @@ public class cliente {
             System.out.println("Ingrese tipo de Cuenta");
             op=lector.nextInt();
             if(op==1){aux=new ahorro("","",0.0,0);}
-            else{aux =new ahorro("","",0.0,0);}
+            else{aux =new corriente("","",0.0,0);}
             aux.Leer();
             oCuentas.add(aux);
     }

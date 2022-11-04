@@ -5,6 +5,7 @@
 
 package com.mycompany.banco;
 
+import com.mycompany.tarea_clases.Datos_Clases.cliente;
 import front.Interfaz;
 
 /**
@@ -14,7 +15,8 @@ import front.Interfaz;
 public class Banco {
 
     public static void main(String[] args) {
-        Interfaz Pruba= new Interfaz();
-        Pruba.show();
+        cliente Prueba = new cliente("","",0);
+        Prueba.Leer();
+        Prueba.Mostrar();
     }
 }
