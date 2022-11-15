@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tarea_clases.Datos_Clases;
+package Datos_Clases;
 
 import java.util.Scanner;
 
@@ -62,9 +62,6 @@ class cuenta {
         System.out.println("Numero de cuenta: ");
         aux=scanner.nextLine();
         setNumero_cuenta(aux);
-        System.out.println("Saldo de ingreso: ");
-        aux=scanner.nextLine();
-        setSaldo(Double.parseDouble(aux));
     }
     
     public void Mostrar (){
@@ -72,6 +69,9 @@ class cuenta {
         System.out.println("Tipo de Cuenta: "+getTipo_cuenta());
         System.out.println("Interes: "+getInteres());
         System.out.println("Saldo : $"+getSaldo());
+    }
+    
+    public void Identificador_Tarjeta(){
     }
     
 }

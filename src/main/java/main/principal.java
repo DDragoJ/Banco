@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
 /**
@@ -13,9 +13,15 @@
  * intereses y otras que generan costos de mantenimiento
 
  */
-public class Tarea_clases {
 
-    public static void main(String[] args) {
-       Interfaz Prueba = new Interfaz();
+package main;
+
+/**
+ *
+ * @author cosmo
+ */
+public class principal {
+        public static void main(String[] args) {
+        System.out.println("oholao");
     }
 }
