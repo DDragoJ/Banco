@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author cosmo
  */
-class cuenta {
+public class cuenta {
    private String Numero_cuenta;
    private String Tipo_cuenta;
    private Double saldo;
@@ -55,23 +55,13 @@ class cuenta {
     public void setTipo_cuenta(String Tipo_cuenta) {
         this.Tipo_cuenta = Tipo_cuenta;
     }
-   
-       public void Leer(){
-        Scanner scanner= new Scanner(System.in);
-        String aux;
-        System.out.println("Numero de cuenta: ");
-        aux=scanner.nextLine();
-        setNumero_cuenta(aux);
-    }
+
     
     public void Mostrar (){
         System.out.println("N° CUENTA: "+getNumero_cuenta());
         System.out.println("Tipo de Cuenta: "+getTipo_cuenta());
         System.out.println("Interes: "+getInteres());
         System.out.println("Saldo : $"+getSaldo());
-    }
-    
-    public void Identificador_Tarjeta(){
     }
     
 }

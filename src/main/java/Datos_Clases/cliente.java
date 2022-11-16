@@ -4,10 +4,10 @@
  */
 package Datos_Clases;
 
+import interfaces.in_generica;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 /**
  *
  * @author cosmo
@@ -17,7 +17,7 @@ public class cliente {
     
     private String Nombre,NUI;
     private Integer Edad;
-    private List<cuenta> oCuentas= new ArrayList<cuenta>();
+    private ArrayList<cuenta> oCuentas= new ArrayList<cuenta>();
     
     /*cONSTRUCTOR*/
 
@@ -30,6 +30,10 @@ public class cliente {
     
     
     /*FUNCIONES*/
+    
+    public ArrayList<cuenta> setCuenta(){
+        return this.oCuentas;
+    }
     
     public String getNombre() {
         return Nombre;
@@ -55,43 +59,4 @@ public class cliente {
         this.Edad = Edad;
     }
     
-    //METODOS
-    
-    public void Leer(){
-        Scanner scanner= new Scanner(System.in);
-        String aux;
-        System.out.println("Ingresar NUI de la persona: ");
-        aux=scanner.nextLine();
-        setNUI(aux);
-        System.out.println("Ingresar nombre de la persona: ");
-        aux=scanner.nextLine();
-        setNombre(aux);
-        System.out.println("Ingresar edad de la persona: ");
-        aux=scanner.nextLine();
-        setEdad(Integer.parseInt(aux));
-        generador();
-    }
-    
-    public void generador (){
-        Scanner lector=new Scanner(System.in);
-            int op=0;
-            cuenta aux;
-            System.out.println("Ingrese tipo de Cuenta");
-            op=lector.nextInt();
-            if(op==1){aux=new ahorro("","",0.0,0);}
-            else{aux =new ahorro("","",0.0,0);}
-            aux.Leer();
-            oCuentas.add(aux);
-    }
-    
-    public void Mostrar (){
-        System.out.println("Cedula: "+getNUI());
-        System.out.println("Nombre: "+getNombre());
-        System.out.println("Edad: "+getEdad());
-        for (cuenta elemento : oCuentas) {
-            elemento.Mostrar();
-        }
-    }
-    
-    //Validacion
 }

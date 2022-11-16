@@ -18,16 +18,5 @@ public class corriente extends cuenta {
         setSaldo(0.0);
         setInteres(5);}
         
-        @Override
-        public void Leer(){
-        super.Leer();
-        Scanner scanner= new Scanner(System.in);
-        String aux;
-        {
-        System.out.println("Saldo de ingreso: ");
-        aux=scanner.nextLine();
-        setSaldo(Double.parseDouble(aux));
-        }while(getSaldo()<5);
-        }
         
 }

@@ -15,13 +15,19 @@
  */
 
 package main;
+import Datos_Clases.cliente;
+import java.util.ArrayList;
+import CRUD.int_menu;
+
 
 /**
  *
  * @author cosmo
  */
 public class principal {
+    public static ArrayList<cliente> personal =new ArrayList<cliente> ();
         public static void main(String[] args) {
-        System.out.println("oholao");
+            int_menu menu=new int_menu();
+            menu.menu_inicio(personal);
     }
 }

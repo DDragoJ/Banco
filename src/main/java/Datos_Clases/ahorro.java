@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author cosmo
  */
-class ahorro extends cuenta {
+public class ahorro extends cuenta {
     
     public ahorro(String Numero_cuenta, String Tipo_cuenta, Double saldo, Integer interes) {
         super(Numero_cuenta, Tipo_cuenta, saldo, interes);
@@ -21,15 +21,6 @@ class ahorro extends cuenta {
         setSaldo(0.0);
         setInteres(0);
     }
-            @Override
-        public void Leer(){
-        super.Leer();
-        Scanner scanner= new Scanner(System.in);
-        String aux;
-        System.out.println("Saldo de ingreso: ");
-        aux=scanner.nextLine();
-        setSaldo(Double.parseDouble(aux));
-        }
     
     
 }
