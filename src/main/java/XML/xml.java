@@ -15,16 +15,22 @@ import org.w3c.dom.Element;
  * @author cosmo
  */
 public class xml {
+    
     Document document;
     public xml() throws ParserConfigurationException{
     DocumentBuilderFactory factor = DocumentBuilderFactory.newInstance();
     DocumentBuilder builder = factor.newDocumentBuilder();
     document = builder.newDocument();}
     
-    public void pripietarios(){
+    public void propietarios(){
         Element Titulares=document.createElement("Titulares");
         Element Titular=document.createElement("NUI");
+        Element Nombre=document.createElement("Nombre");
+        Element Edad=document.createElement("Edad");
+        Element Cuentas=document.createElement("Cuentas");
         Titulares.appendChild(Titular);
-        
+        Titular.appendChild(Nombre);
+        Titular.appendChild(Edad);
+        Titular.appendChild(Cuentas);
     }    
 }
