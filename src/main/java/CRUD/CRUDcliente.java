@@ -64,6 +64,12 @@ public class CRUDcliente implements in_generica {
         return indice;
     }     
     
+    public void Mostrar_unico (ArrayList<cliente> ocliente,int indice){
+        System.out.println("Cedula: "+ocliente[indice].getNUI());
+        System.out.println("Nombre: "+ocliente[indice].getNombre());
+        System.out.println("Edad: "+ocliente[indice].getEdad());
+    }     
+    
     @Override
     public ArrayList<cliente> Eliminar(ArrayList<cliente> ocliente,int indice){
         ocliente.remove(indice);

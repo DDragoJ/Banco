@@ -26,35 +26,27 @@ public class cliente {
         this.NUI = NUI;
         this.Edad = Edad;
     }
-    
-    
-    
+
     /*FUNCIONES*/
     
     public ArrayList<cuenta> setCuenta(){
         return this.oCuentas;
     }
-    
     public String getNombre() {
         return Nombre;
     }
-
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
-
     public String getNUI() {
         return NUI;
     }
-
     public void setNUI(String NUI) {
         this.NUI = NUI;
     }
-
     public Integer getEdad() {
         return Edad;
     }
-
     public void setEdad(Integer Edad) {
         this.Edad = Edad;
     }

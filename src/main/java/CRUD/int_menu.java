@@ -19,6 +19,7 @@ public class int_menu {
     CRUDCuenta cuenta =new CRUDCuenta();
     Scanner lector =new Scanner(System.in);
         int op;
+        String aux;
     
     //menu
     public void menu_inicio(ArrayList<cliente> lista){
@@ -50,7 +51,7 @@ public class int_menu {
                 break;
         }
     }
-            public void menu_ingreso(ArrayList<cliente> lista){
+    public void menu_ingreso(ArrayList<cliente> lista){
         System.out.println("Menu Ingreso");
         System.out.println("1.-Ingresar Cliente");
         System.out.println("2.-Ingresar Cuenta");
@@ -69,8 +70,25 @@ public class int_menu {
             default:
                 System.out.println("Valor incorrecto");
                 menu_ingreso(lista);
+                break; 
+        }menu_inicio(lista); 
+    }
+    public void menu_buscar(ArrayList<cliente> lista){
+        System.out.println("Menu buscar cliente");
+        System.out.println("1.-Cliente ");
+        System.out.println("2.-Salir");
+        op=Integer.parseInt(lector.nextLine());
+        switch (op) {
+            case 1:
+                System.out.println("Escribir nombre");
+                aux=lector.nextLine();
+                Mostrar(Cliente.Buscar(lista, aux));
+                break;
+            default:
+                System.out.println("Valor incorrecto");
                 break;
         }
+        menu_inicio(lista);
     }
 
     
