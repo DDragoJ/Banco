@@ -28,7 +28,8 @@ public class int_menu {
         System.out.println("2.-Mostrar");
         System.out.println("3.-Eliminar");
         System.out.println("4.-Editar");
-        System.out.println("5.-Salir");
+        System.out.println("5.-Buscar");
+        System.out.println("6.-Salir");
         op=Integer.parseInt(lector.nextLine());
         switch (op) {
             case 1:
@@ -44,6 +45,9 @@ public class int_menu {
                 //editar
                 break;
             case 5:
+                menu_buscar(lista);
+                break;
+            case 6:
                 break;
             default:
                 System.out.println("Valor incorrecto");
@@ -76,13 +80,19 @@ public class int_menu {
     public void menu_buscar(ArrayList<cliente> lista){
         System.out.println("Menu buscar cliente");
         System.out.println("1.-Cliente ");
+        System.out.println("1.-Cuenta ");
         System.out.println("2.-Salir");
         op=Integer.parseInt(lector.nextLine());
         switch (op) {
             case 1:
                 System.out.println("Escribir nombre");
                 aux=lector.nextLine();
-                Mostrar(Cliente.Buscar(lista, aux));
+                Cliente.Mostrar_unico(lista, Cliente.Buscar(lista, aux));
+                break;
+            case 2:
+                /*
+                escribir cuentas
+                */
                 break;
             default:
                 System.out.println("Valor incorrecto");

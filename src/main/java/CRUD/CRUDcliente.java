@@ -19,9 +19,11 @@ import java.util.Scanner;
  * @author cosmo
  */
 public class CRUDcliente implements in_generica {
+    CRUDCuenta cuenta=new CRUDCuenta();
         @Override
     public ArrayList<cliente> Leer(ArrayList<cliente> listacliente){
         cliente ocliente=new cliente("","",0);
+        ArrayList<cuenta> listado =new ArrayList<cuenta>();
         Scanner scanner= new Scanner(System.in);
         String aux;
         System.out.println("Ingresar NUI de la persona: ");
@@ -32,8 +34,10 @@ public class CRUDcliente implements in_generica {
         ocliente.setNombre(aux);
         System.out.println("Ingresar edad de la persona: ");
         aux=scanner.nextLine();
+        ocliente.setCuenta(cuenta.Leer(listado));
         ocliente.setEdad(Integer.parseInt(aux));
         listacliente.add(ocliente);
+        
         return listacliente;
     }
     
@@ -56,18 +60,17 @@ public class CRUDcliente implements in_generica {
         @Override
     public int Buscar (ArrayList<cliente> ocliente,String buscador){
         int indice=-1;
-        int i=0;
         for (cliente elemento : ocliente) {
-            if(elemento.getNUI()==buscador)indice=i;
-            i++;
+            if(elemento.getNUI().equals(buscador))indice=ocliente.indexOf(elemento);
         }
         return indice;
     }     
     
     public void Mostrar_unico (ArrayList<cliente> ocliente,int indice){
-        System.out.println("Cedula: "+ocliente[indice].getNUI());
-        System.out.println("Nombre: "+ocliente[indice].getNombre());
-        System.out.println("Edad: "+ocliente[indice].getEdad());
+        cliente elemento=ocliente.get(indice);
+        System.out.println("Cedula: "+elemento.getNUI());
+        System.out.println("Nombre: "+elemento.getNombre());
+        System.out.println("Edad: "+elemento.getEdad());
     }     
     
     @Override

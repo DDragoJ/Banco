@@ -62,4 +62,15 @@ public class CRUDCuenta implements in_genericaCuenta {
     public void Modificar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    public void Mostrar(ArrayList<cuenta> listaccuenta) {
+        for (cuenta elemento : listaccuenta) {
+            System.out.println("Numero de cuenta: "+elemento.getNumero_cuenta());
+            System.out.println("Tipo de cuenta: "+elemento.getTipo_cuenta());
+            System.out.println("Saldo: "+elemento.getSaldo());
+            System.out.println("Cobro por mantenimiento: "+elemento.getInteres());
+        }
+    }
+    public void Mostrar_unico() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

@@ -29,9 +29,13 @@ public class cliente {
 
     /*FUNCIONES*/
     
-    public ArrayList<cuenta> setCuenta(){
+    public ArrayList<cuenta> getCuenta(){
         return this.oCuentas;
     }
+    public void setCuenta(ArrayList<cuenta> aux){
+        this.oCuentas=aux;
+    }
+    
     public String getNombre() {
         return Nombre;
     }
