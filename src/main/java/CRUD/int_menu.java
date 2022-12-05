@@ -36,7 +36,7 @@ public class int_menu {
                 menu_ingreso(lista);
                 break;
             case 2:
-                //mostrar
+                menu_Mostrar(lista);
                 break;
             case 3:
                 //eliminar
@@ -100,6 +100,28 @@ public class int_menu {
         }
         menu_inicio(lista);
     }
-
-    
+    public void menu_Mostrar(ArrayList<cliente> lista){
+        System.out.println("Menu Mostrar");
+        System.out.println("1.-Mostrar Cliente");
+        System.out.println("2.-Mostrar Cuenta");
+        System.out.println("3.-Salir");
+        op=Integer.parseInt(lector.nextLine());
+        switch (op) {
+            case 1:
+                Cliente.Mostrar(lista);
+                break;
+            case 2:
+                //buscar;
+                break;
+            case 3:
+                menu_inicio(lista);
+                break;
+            case 4:
+                break;
+            default:
+                System.out.println("Valor incorrecto");
+                menu_ingreso(lista);
+                break; }
+        menu_inicio(lista);
+    } 
 }
