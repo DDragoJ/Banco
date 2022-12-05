@@ -3,12 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package XML;
+import CRUD.int_menu;
+import Datos_Clases.cliente;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+
 
 /**
  *
@@ -16,21 +22,22 @@ import org.w3c.dom.Element;
  */
 public class xml {
     
-    Document document;
-    public xml() throws ParserConfigurationException{
-    DocumentBuilderFactory factor = DocumentBuilderFactory.newInstance();
-    DocumentBuilder builder = factor.newDocumentBuilder();
-    document = builder.newDocument();}
+
+    public ArrayList<cliente>  xml_lector() throws JAXBException {
+        int_menu inicio=new int_menu();
+        JAXBContext contexto=JAXBContext.newInstance(cliente_xml.class);
+        Unmarshaller unmarshaller  = contexto.createUnmarshaller();
+        cliente_xml listado = (cliente_xml) unmarshaller.unmarshal(new File("Banco.xml"));
+        return listado.gettitulares();
+    }
     
-    public void propietarios(){
-        Element Titulares=document.createElement("Titulares");
-        Element Titular=document.createElement("NUI");
-        Element Nombre=document.createElement("Nombre");
-        Element Edad=document.createElement("Edad");
-        Element Cuentas=document.createElement("Cuentas");
-        Titulares.appendChild(Titular);
-        Titular.appendChild(Nombre);
-        Titular.appendChild(Edad);
-        Titular.appendChild(Cuentas);
-    }    
+    public void xml_generador(ArrayList<cliente> listado) throws JAXBException, IOException{
+        JAXBContext contexto=JAXBContext.newInstance(cliente_xml.class);
+        Marshaller marshal =contexto.createMarshaller();
+        cliente_xml lista=new cliente_xml();
+        lista.setTitulares(listado);
+        marshal.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        //marshal.marshal(lista, System.out);
+        marshal.marshal(lista, new FileWriter("Banco.xml"));
+    }
 }

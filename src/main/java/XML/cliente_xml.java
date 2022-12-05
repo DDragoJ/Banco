@@ -18,23 +18,22 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author cosmo
  */
 
-@XmlRootElement(name="Titulares")
+@XmlRootElement(name="Banco")
 public class cliente_xml {
     /*ATRIBUTOS*/
 
-        private ArrayList<cliente> titulares= new ArrayList<cliente>();
-    
-    public ArrayList<cuenta> oCuentas = new ArrayList<cuenta>();
+    private ArrayList<cliente> titulares= new ArrayList<cliente>();
     
     /*FUNCIONES*/
-   @XmlElementWrapper(name="Titular")
-   @XmlElement(name="Cuenta")
-    public ArrayList<cuenta> setCuenta(){
-        return oCuentas;
-    }
+   @XmlElementWrapper(name="Titulares")
     
     @XmlElement(name="Titular")
     public ArrayList<cliente> gettitulares(){
         return titulares;
     }
+
+    public void setTitulares(ArrayList<cliente> titulares) {
+        this.titulares = titulares;
+    }
+    
 }
