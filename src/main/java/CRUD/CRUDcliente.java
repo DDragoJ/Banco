@@ -52,7 +52,7 @@ public class CRUDcliente implements in_generica {
         System.out.println("Cedula: "+ecliente.getNUI());
         System.out.println("Nombre: "+ecliente.getNombre());
         System.out.println("Edad: "+ecliente.getEdad());
-        for (cuenta elemento : ecliente.setCuenta()) {
+        for (cuenta elemento : ecliente.getCuenta()) {
             elemento.Mostrar();
         }}
     }
