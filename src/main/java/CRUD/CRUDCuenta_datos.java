@@ -21,7 +21,7 @@ import java.util.Scanner;
  */
 public class CRUDCuenta_datos  {
 
-    public cuenta Leer(){
+    public cuenta Leer(cliente propitario){
         Scanner scanner= new Scanner(System.in);
         cuenta ocuenta = new cuenta ("","",0.0,0,null);
         String aux;
@@ -32,13 +32,14 @@ public class CRUDCuenta_datos  {
         op=Integer.parseInt(scanner.nextLine());
         System.out.println("Numero de cuenta: ");
         aux=scanner.nextLine();
-        if (op==1){ocuenta=new ahorro("","AHORRO",0.0,0,propietaro);
-        }else{ocuenta=new corriente("","CORRIENTE",0.0,0,propietaro);
+        if (op==1){ocuenta=new ahorro("","AHORRO",0.0,0,propitario);
+        }else{ocuenta=new corriente("","CORRIENTE",0.0,0,propitario);
         }
         ocuenta.setNumero_cuenta(aux);
         System.out.println("Saldo de ingreso: ");
         aux=scanner.nextLine();
         ocuenta.setSaldo(Double.parseDouble(aux));
+        return ocuenta;
     }
 
     
