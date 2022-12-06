@@ -4,6 +4,7 @@
  */
 package interfaces;
 
+import Datos_Clases.cliente;
 import Datos_Clases.cuenta;
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  * @author cosmo
  */
 public interface in_genericaCuenta {
-    public ArrayList<cuenta> Leer(ArrayList<cuenta> listaccuenta);
+    public ArrayList<cuenta> Leer(ArrayList<cuenta> listaccuenta,cliente aux);
     public int Buscar (ArrayList<cuenta> listaccuenta, String buscador);
     public ArrayList<cuenta> Eliminar(ArrayList<cuenta> listaccuenta, int indice);
     public void Modificar();

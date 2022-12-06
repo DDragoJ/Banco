@@ -19,9 +19,9 @@ import java.util.Scanner;
  *
  * @author cosmo
  */
-public class CRUDCuenta implements in_genericaCuenta {
-        @Override
-    public ArrayList<cuenta> Leer(ArrayList<cuenta> listaccuenta,cliente propietaro){
+public class CRUDCuenta_datos  {
+
+    public cuenta Leer(){
         Scanner scanner= new Scanner(System.in);
         cuenta ocuenta = new cuenta ("","",0.0,0,null);
         String aux;
@@ -39,11 +39,10 @@ public class CRUDCuenta implements in_genericaCuenta {
         System.out.println("Saldo de ingreso: ");
         aux=scanner.nextLine();
         ocuenta.setSaldo(Double.parseDouble(aux));
-        return listaccuenta;
     }
 
     
-        @Override
+
     public int Buscar (ArrayList<cuenta> oCuentas,String buscador){
         int indice=-1;
         for(int i=0;i<oCuentas.size();i++){
@@ -52,13 +51,13 @@ public class CRUDCuenta implements in_genericaCuenta {
         return indice;
     }     
     
-    @Override
+
     public ArrayList<cuenta> Eliminar(ArrayList<cuenta> oCuentas,int indice){
         oCuentas.remove(indice);
         return oCuentas;
     }
 
-    @Override
+
     public void Modificar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }

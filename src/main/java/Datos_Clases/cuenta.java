@@ -12,15 +12,25 @@ import java.util.Scanner;
  */
 public class cuenta {
    private String Numero_cuenta;
+   private cliente Propietario;
    private String Tipo_cuenta;
    private Double saldo;
    private Integer interes;
 
-    public cuenta(String Numero_cuenta, String Tipo_cuenta, Double saldo, Integer interes) {
+    public cuenta(String Numero_cuenta, String Tipo_cuenta, Double saldo, Integer interes,cliente aux) {
         this.Numero_cuenta = Numero_cuenta;
+        this.Propietario=aux;
         this.Tipo_cuenta = Tipo_cuenta;
         this.saldo = saldo;
         this.interes = interes;
+    }
+
+    public cliente getPropietario() {
+        return Propietario;
+    }
+
+    public void setPropietario(cliente Propietario) {
+        this.Propietario = Propietario;
     }
 
 
@@ -54,14 +64,6 @@ public class cuenta {
 
     public void setTipo_cuenta(String Tipo_cuenta) {
         this.Tipo_cuenta = Tipo_cuenta;
-    }
-
-    
-    public void Mostrar (){
-        System.out.println("N° CUENTA: "+getNumero_cuenta());
-        System.out.println("Tipo de Cuenta: "+getTipo_cuenta());
-        System.out.println("Interes: "+getInteres());
-        System.out.println("Saldo : $"+getSaldo());
     }
     
 }

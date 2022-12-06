@@ -22,8 +22,7 @@ public class CRUDcliente implements in_generica {
     CRUDCuenta cuenta=new CRUDCuenta();
         @Override
     public ArrayList<cliente> Leer(ArrayList<cliente> listacliente){
-        cliente ocliente=new cliente("","",0);
-        ArrayList<cuenta> listado =new ArrayList<cuenta>();
+        cliente ocliente=new cliente();
         Scanner scanner= new Scanner(System.in);
         String aux;
         System.out.println("Ingresar NUI de la persona: ");
@@ -34,16 +33,9 @@ public class CRUDcliente implements in_generica {
         ocliente.setNombre(aux);
         System.out.println("Ingresar edad de la persona: ");
         aux=scanner.nextLine();
-        ocliente.setCuenta(cuenta.Leer(listado));
         ocliente.setEdad(Integer.parseInt(aux));
         listacliente.add(ocliente);
-        
         return listacliente;
-    }
-    
-    public ArrayList<cuenta> generador (ArrayList<cuenta> oCuenta){
-        CRUDCuenta Inter_cuenta=new CRUDCuenta();
-        return Inter_cuenta.Leer(oCuenta);
     }
     
         @Override
@@ -52,9 +44,7 @@ public class CRUDcliente implements in_generica {
         System.out.println("Cedula: "+ecliente.getNUI());
         System.out.println("Nombre: "+ecliente.getNombre());
         System.out.println("Edad: "+ecliente.getEdad());
-        for (cuenta elemento : ecliente.getCuenta()) {
-            elemento.Mostrar();
-        }}
+        }
     }
     
         @Override

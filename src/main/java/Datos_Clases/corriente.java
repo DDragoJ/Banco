@@ -12,8 +12,8 @@ import java.util.Scanner;
  * @author cosmo
  */
 public class corriente extends cuenta {
-        public corriente(String Numero_cuenta, String Tipo_cuenta, Double saldo, Integer interes) {
-        super(Numero_cuenta, Tipo_cuenta, saldo, interes);
+        public corriente(String Numero_cuenta, String Tipo_cuenta, Double saldo, Integer interes,cliente aux) {
+        super(Numero_cuenta, Tipo_cuenta, saldo, interes,aux);
         setTipo_cuenta("CORRIENTE");
         setSaldo(0.0);
         setInteres(5);}

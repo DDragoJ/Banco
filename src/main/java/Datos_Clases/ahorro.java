@@ -15,8 +15,8 @@ import java.util.Scanner;
  */
 public class ahorro extends cuenta {
     
-    public ahorro(String Numero_cuenta, String Tipo_cuenta, Double saldo, Integer interes) {
-        super(Numero_cuenta, Tipo_cuenta, saldo, interes);
+    public ahorro(String Numero_cuenta, String Tipo_cuenta, Double saldo, Integer interes,cliente aux) {
+        super(Numero_cuenta, Tipo_cuenta, saldo, interes,aux);
         setTipo_cuenta("AHORRO");
         setSaldo(0.0);
         setInteres(0);

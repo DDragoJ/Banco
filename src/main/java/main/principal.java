@@ -19,7 +19,10 @@ import Datos_Clases.cliente;
 import java.util.ArrayList;
 import CRUD.int_menu;
 import Datos_Clases.cuenta;
-import com.sun.org.apache.bcel.internal.generic.AALOAD;
+import XML.xml;
+import java.io.IOException;
+import javax.xml.bind.JAXBException;
+
 
 
 /**
@@ -28,26 +31,34 @@ import com.sun.org.apache.bcel.internal.generic.AALOAD;
  */
 public class principal {
     public static ArrayList<cliente> personal =new ArrayList<cliente> ();
-        public static void main(String[] args) {
+        public static void main(String[] args) throws JAXBException, IOException {
             int_menu menu=new int_menu();
+            xml archivo = new xml();
             principal basado=new principal();
-            personal=basado.carga();
+            personal=archivo.xml_lector();
             menu.menu_inicio(personal);
+
     }
         public ArrayList<cliente> carga(){
-            cuenta cuenta1=new cuenta ("1","AHORRO",2.0,0);
-            cuenta cuenta2=new cuenta ("2","CORRIENTE",10.0,0);
-            cliente cliente1=new cliente ("as","1",0);
-            cliente cliente2=new cliente ("ad","2",2);
-            ArrayList<cuenta> defecto= new ArrayList<cuenta>();
-            defecto.add(cuenta1);
-            cliente1.setCuenta(defecto);
-            defecto=new ArrayList<cuenta>();
-            defecto.add(cuenta2);
-            cliente2.setCuenta(defecto);
+            cliente cliente1=new cliente ();
+            cliente1.setEdad(1);
+            cliente1.setNUI("1");
+            cliente1.setNombre("numero1");
+            cliente cliente2=new cliente ();
+            cliente2.setEdad(2);
+            cliente2.setNUI("2");
+            cliente2.setNombre("numero2");
             ArrayList<cliente> lista=new ArrayList<cliente>();
             lista.add(cliente1);
             lista.add(cliente2);
+            return lista;
+        }
+        public ArrayList<cuenta> Cuenta(){
+            cuenta cuenta1=new cuenta ("1","AHORRO",2.0,0,personal.get(0));
+            cuenta cuenta2=new cuenta ("2","CORRIENTE",10.0,0,personal.get(1));
+            ArrayList<cuenta> lista=new ArrayList<cuenta>();
+            lista.add(cuenta1);
+            lista.add(cuenta2);
             return lista;
         }
 }

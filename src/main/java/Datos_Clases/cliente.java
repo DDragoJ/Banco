@@ -17,24 +17,13 @@ public class cliente {
     
     private String Nombre,NUI;
     private Integer Edad;
-    private ArrayList<cuenta> oCuentas= new ArrayList<cuenta>();
     
     /*cONSTRUCTOR*/
 
-    public cliente(String Nombre, String NUI, Integer Edad) {
-        this.Nombre = Nombre;
-        this.NUI = NUI;
-        this.Edad = Edad;
+    public cliente() {
     }
 
     /*FUNCIONES*/
-    
-    public ArrayList<cuenta> getCuenta(){
-        return this.oCuentas;
-    }
-    public void setCuenta(ArrayList<cuenta> aux){
-        this.oCuentas=aux;
-    }
     
     public String getNombre() {
         return Nombre;

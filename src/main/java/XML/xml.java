@@ -24,11 +24,20 @@ public class xml {
     
 
     public ArrayList<cliente>  xml_lector() throws JAXBException {
-        int_menu inicio=new int_menu();
         JAXBContext contexto=JAXBContext.newInstance(cliente_xml.class);
-        Unmarshaller unmarshaller  = contexto.createUnmarshaller();
-        cliente_xml listado = (cliente_xml) unmarshaller.unmarshal(new File("Banco.xml"));
+        Unmarshaller unmarsha  = contexto.createUnmarshaller();
+        cliente_xml listado = (cliente_xml) unmarsha.unmarshal(new File("Banco.xml"));
+        ArrayList<cliente> personas=listado.gettitulares();
         return listado.gettitulares();
+    }
+    public void pr() throws JAXBException {
+        JAXBContext contexto=JAXBContext.newInstance(cliente_xml.class);
+        Unmarshaller unmarsha  = contexto.createUnmarshaller();
+        cliente_xml listado = (cliente_xml) unmarsha.unmarshal(new File("Banco.xml"));
+        ArrayList<cliente> personas=listado.gettitulares();
+        for(cliente a:personas)
+            System.out.println(a.getNUI());
+
     }
     
     public void xml_generador(ArrayList<cliente> listado) throws JAXBException, IOException{
@@ -37,7 +46,6 @@ public class xml {
         cliente_xml lista=new cliente_xml();
         lista.setTitulares(listado);
         marshal.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-        //marshal.marshal(lista, System.out);
         marshal.marshal(lista, new FileWriter("Banco.xml"));
     }
 }

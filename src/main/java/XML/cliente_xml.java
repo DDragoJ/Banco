@@ -26,7 +26,6 @@ public class cliente_xml {
     
     /*FUNCIONES*/
    @XmlElementWrapper(name="Titulares")
-    
     @XmlElement(name="Titular")
     public ArrayList<cliente> gettitulares(){
         return titulares;

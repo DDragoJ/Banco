@@ -17,12 +17,11 @@ import javax.xml.bind.annotation.XmlType;
  * @author USUARIO
  */
 @XmlRootElement(name="Titular")
-@XmlType(propOrder={"Nui","Nombre","Edad","Cuenta"})
+@XmlType(propOrder={"Nui","Nombre","Edad"})
 public class cliente_estructura {
     
     private String Nombre,NUI;
     private Integer Edad;
-    private ArrayList<cuenta> oCuentas= new ArrayList<cuenta>();
     
     
     @XmlAttribute(name="NUI")
@@ -38,12 +37,6 @@ public class cliente_estructura {
         return Edad;
     }
 
-    @XmlElementWrapper(name="Cuentas")
-    @XmlElement(name="Cuenta")
-    public ArrayList<cuenta> getoCuentas() {
-        return oCuentas;
-    }
-
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
@@ -56,9 +49,6 @@ public class cliente_estructura {
         this.Edad = Edad;
     }
 
-    public void setoCuentas(ArrayList<cuenta> oCuentas) {
-        this.oCuentas = oCuentas;
-    }
     
     
 }
