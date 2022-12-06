@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package XML;
+package conexion_db;
 import CRUD.int_menu;
 import Datos_Clases.cliente;
+import XML.cliente_xml;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,7 +21,7 @@ import javax.xml.bind.Unmarshaller;
  *
  * @author cosmo
  */
-public class xml {
+public class OperacionesCLiente {
     
 
     public ArrayList<cliente>  xml_lector() throws JAXBException {
@@ -47,5 +48,9 @@ public class xml {
         lista.setTitulares(listado);
         marshal.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         marshal.marshal(lista, new FileWriter("Banco.xml"));
+    }
+    
+    public int lista_propietarios(ArrayList<cliente> listado){
+        return listado.size();
     }
 }

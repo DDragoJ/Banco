@@ -19,7 +19,7 @@ import Datos_Clases.cliente;
 import java.util.ArrayList;
 import CRUD.int_menu;
 import Datos_Clases.cuenta;
-import XML.xml;
+import conexion_db.OperacionesCLiente;
 import java.io.IOException;
 import javax.xml.bind.JAXBException;
 
@@ -33,7 +33,7 @@ public class principal {
     public static ArrayList<cliente> personal =new ArrayList<cliente> ();
         public static void main(String[] args) throws JAXBException, IOException {
             int_menu menu=new int_menu();
-            xml archivo = new xml();
+            OperacionesCLiente archivo = new OperacionesCLiente();
             principal basado=new principal();
             personal=archivo.xml_lector();
             menu.menu_inicio(personal);

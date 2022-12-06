@@ -153,4 +153,10 @@ public class OperacionesAhorro {
         }
         return lista;
     }
+    public Double Saldo_Ahorro() throws SQLException{
+        Double aux=0.0;
+        for(ahorro elemento: listar())
+            aux+=elemento.getSaldo();
+        return aux;
+    }
 }
